@@ -12,9 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Echo test
-        run: echo "✅ GitHub Actions workflow triggered successfully!"
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -25,3 +22,21 @@ jobs:
         run: |
           npm ci
           npm run build
+
+      - name: Upload dist to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: "frontend/dist/**"
+          target: "/var/www/mirai2cs/frontend/releases/_incoming"
+
+      - name: Run deploy script
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            sudo /usr/local/bin/m2c-deploy-frontend.sh
