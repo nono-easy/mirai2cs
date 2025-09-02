@@ -14,3 +14,14 @@ jobs:
 
       - name: Echo test
         run: echo "✅ GitHub Actions workflow triggered successfully!"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install & Build
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build
