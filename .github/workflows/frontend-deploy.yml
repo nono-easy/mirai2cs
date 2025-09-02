@@ -40,3 +40,5 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             sudo /usr/local/bin/m2c-deploy-frontend.sh
+            echo "✅ Current deployed version:"
+            readlink -f /var/www/mirai2cs/frontend/current
