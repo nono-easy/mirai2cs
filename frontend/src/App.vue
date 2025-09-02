@@ -6,6 +6,7 @@
       <p>已存活：<strong>{{ daysAlive }}</strong> 天</p>
       <p>今天是：<strong>{{ todayStr }}</strong></p>
       <p>站长希望你今天也要开心哦 😊</p>
+      <p>250902：CI/CD 功能完成</p>
       <el-divider></el-divider>
       <p>
         <el-button type="primary" @click="count++">点击 {{ count }}</el-button>
