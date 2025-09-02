@@ -9,6 +9,11 @@
       <p>250902：CI/CD 功能完成</p>
       <el-divider></el-divider>
       <p>
+        <a href="https://github.com/nono-easy/mirai2cs" target="_blank">
+          <el-button type="success">🌟 查看本站源码</el-button>
+        </a>
+      </p>
+      <p>
         <el-button type="primary" @click="count++">点击 {{ count }}</el-button>
       </p>
     </el-card>
