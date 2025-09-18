@@ -5,9 +5,10 @@
       <p>本站的建站日期：<strong>{{ launchDateStr }}</strong></p>
       <p>已存活：<strong>{{ daysAlive }}</strong> 天</p>
       <p>今天是：<strong>{{ todayStr }}</strong></p>
-      <p>站长希望你今天也要开心哦 😊</p>
+      <p>站长のの希望你今天也要开心哦 😊</p>
       <p>250906：更改主页样式</p>
       <p>250902：CI/CD 功能完成</p>
+      <p>250918：诶嘿嘿，粗去丸回来噜~</p>
       <el-divider></el-divider>
       <p>
         <a href="https://github.com/nono-easy/mirai2cs" target="_blank">
