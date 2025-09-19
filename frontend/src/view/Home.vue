@@ -9,8 +9,8 @@
 
         <!-- 右侧：文字和按钮 -->
         <div class="info-box">
-          <h1>mirai2cs.com</h1>
-          <h2>面向未来的计算机科学</h2>
+          <h2>mirai2cs.com</h2>
+          <h3>面向未来的计算机科学</h3>
           <p>本站的建站日期：<strong>{{ launchDateStr }}</strong></p>
           <p>已存活：<strong>{{ daysAlive }}</strong> 天</p>
           <p>今天是：<strong>{{ todayStr }}</strong></p>
