@@ -6,12 +6,12 @@
         <nav class="nav">
           <router-link to="/">🏠 首页</router-link>
           <span class="sep">|</span>
-          <router-link to="/hello">👋 HelloWorld</router-link>
-          <span class="sep">|</span>
+          <!--<router-link to="/hello">👋 HelloWorld</router-link>-->
+          <!--<span class="sep">|</span>-->
           <router-link to="/about">ℹ️ about</router-link>
           <span class="sep">|</span>
-          <router-link to="/containerTest">🧪 container</router-link>
-          <span class="sep">|</span>
+          <!--<router-link to="/containerTest">🧪 container</router-link>-->
+          <!--<span class="sep">|</span>-->
           <router-link to="/history">⏲️ 网站日志</router-link>
         </nav>
       </el-header>
