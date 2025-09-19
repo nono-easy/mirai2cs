@@ -11,6 +11,8 @@
           <router-link to="/about">ℹ️ about</router-link>
           <span class="sep">|</span>
           <router-link to="/containerTest">🧪 container</router-link>
+          <span class="sep">|</span>
+          <router-link to="/history">⏲️ 网站日志</router-link>
         </nav>
       </el-header>
 
