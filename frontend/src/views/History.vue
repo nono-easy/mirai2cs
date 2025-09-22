@@ -32,6 +32,7 @@ const todayStr = computed(() => formatDate(now.value))
 
 // 日志数据
 const logs = ref([
+  { date: '250922', text: '代码调整，nigon标签页上线' },
   { date: '250919', text: 'UI美化，站娘上线，可爱捏' },
   { date: '250918', text: '分离网站日志' },
   { date: '250916', text: '诶嘿嘿，粗去丸回来噜~' },
