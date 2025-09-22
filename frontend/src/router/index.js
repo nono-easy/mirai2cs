@@ -2,13 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // 路由表（按你的 4 个页面）
 const routes = [
-  { path: '/', name: 'Home', component: () => import('../view/Home.vue'), meta: { title: '首页 - mirai2cs' } },
-  { path: '/hello', name: 'HelloWorld', component: () => import('../view/HelloWorld.vue'), meta: { title: 'HelloWorld' } },
-  { path: '/about', name: 'About', component: () => import('../view/About.vue'), meta: { title: '关于' } },
-  { path: '/containerTest', name: 'ContainerTest', component: () => import('../view/ContainerTest.vue'), meta: { title: 'Container 示例' } },
-  { path: '/history', name: 'History', component: () => import('../view/History.vue'), meta: { title: '网站日志' } },
   // 兜底 404
-  { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('../view/NotFound.vue'), meta: { title: '404 - 页面不存在' } },
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('../views/NotFound.vue'), meta: { title: '404 - 页面不存在' } },
+  // 具体路由
+  { path: '/', name: 'Home', component: () => import('../views/Home.vue'), meta: { title: '首页 - mirai2cs' } },
+  { path: '/about', name: 'About', component: () => import('../views/About.vue'), meta: { title: '关于 - mirai2cs' } },
+  { path: '/history', name: 'History', component: () => import('../views/History.vue'), meta: { title: '网站日志 - mirai2cs' } },
+  { path: '/nihon', name: 'Nihon', component: () => import('../views/Nihon.vue'), meta: { title: '日本 - mirai2cs' } }
 ]
 
 const router = createRouter({
