@@ -1,121 +1,139 @@
 <!-- src/views/Nihon.vue -->
 <template>
-  <div class="wrap">
-    <el-card class="hero">
-      <div class="hero-inner">
-        <img
-          class="hero-logo"
-          src="/mirai2cs-logo.png"
-          alt="Mirai2CS Mascot"
-          loading="lazy"
-          width="120"
-          height="120"
-        />
-        <div>
-          <h2 class="title">日本 · Nihon</h2>
-          <p class="subtitle">二次元 / 日语 / 文化小站入口</p>
-        </div>
-      </div>
-    </el-card>
-
-    <div class="grid">
-      <el-card class="card">
-        <h3>日语学习</h3>
-        <p class="desc">五十音、语法清单、常用表达与素材导航。</p>
-        <div class="actions">
-          <el-button type="primary" @click="nav('/nihongo')">进入 Nihongo</el-button>
-          <el-button link @click="nav('/nihongo/resources')">学习资料</el-button>
+  <div class="nihon-wrap">
+    <div class="nihon-grid">
+      <el-card class="nihon-card">
+        <div class="card-inner">
+          <div class="icon" aria-hidden="true">🌸</div>
+          <div class="content">
+            <h3 class="title">日漫</h3>
+            <p class="desc">番剧随记、推荐与安利。</p>
+            <div class="actions">
+              <el-button type="primary" round @click="nav('/nihon/anime')">进入</el-button>
+            </div>
+          </div>
         </div>
       </el-card>
 
-      <el-card class="card">
-        <h3>二次元角</h3>
-        <p class="desc">番剧/音乐/游戏随记，轻松又快乐~</p>
-        <div class="actions">
-          <el-button type="success" @click="nav('/a2')">去逛逛</el-button>
-          <el-button link @click="nav('/tags/anime')">#anime</el-button>
+      <el-card class="nihon-card">
+        <div class="card-inner">
+          <div class="icon violet">🎮</div>
+          <div class="content">
+            <h3 class="title">Galgame</h3>
+            <p class="desc">游戏推荐、角色与故事。</p>
+            <div class="actions">
+              <el-button type="success" round @click="nav('/nihon/galgame')">进入</el-button>
+            </div>
+          </div>
         </div>
       </el-card>
 
-      <el-card class="card">
-        <h3>文化随笔</h3>
-        <p class="desc">日本风物与文化观察，慢慢写，慢慢看。</p>
-        <div class="actions">
-          <el-button @click="nav('/blog/japan')">阅读随笔</el-button>
-          <el-button link @click="nav('/blog')">更多文章</el-button>
+      <el-card class="nihon-card">
+        <div class="card-inner">
+          <div class="icon orange">📖</div>
+          <div class="content">
+            <h3 class="title">Nihongo</h3>
+            <p class="desc">日语学习笔记与资源。</p>
+            <div class="actions">
+              <el-button type="warning" round @click="nav('/nihon/nihongo')">进入</el-button>
+            </div>
+          </div>
         </div>
       </el-card>
     </div>
-
-    <el-card class="tips">
-      <p>
-        ✨ 小提示：本页由AI生成。先占坑，后续再补内容。
-      </p>
-    </el-card>
   </div>
 </template>
 
 <script setup>
 import { useRouter } from 'vue-router'
-
 const router = useRouter()
 const nav = (to) => router.push(to)
 </script>
 
 <style>
-.wrap {
-  max-width: 980px;
-  margin: 40px auto;
+:root {
+  --card-pad: 16px;
+  --radius: 16px;
+  --gap: 16px;
+  --bg-soft: #faf6f1;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg-soft: #151515; }
+}
+
+.nihon-wrap {
+  max-width: 1080px;
+  margin: 24px auto 40px;
   padding: 0 16px;
 }
 
-.hero {
-  margin-bottom: 20px;
+.nihon-grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
 }
-.hero-inner {
-  display: flex;
+@media (min-width: 680px) {
+  .nihon-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 980px) {
+  .nihon-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.nihon-card {
+  border-radius: var(--radius);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.nihon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+}
+
+/* 让图标+文本在一行，垂直居中；卡片内容统一高度 */
+.card-inner {
+  display: grid;
+  grid-template-columns: 56px 1fr;
   align-items: center;
-  gap: clamp(12px, 3vw, 24px);
+  gap: 14px;
+  min-height: 132px;
+  padding: var(--card-pad);
 }
-.hero-logo {
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+
+/* 萌系圆形图标 */
+.icon {
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffe7f1, #ffd9e8);
+  box-shadow: 0 2px 8px rgba(255, 80, 160, .15);
+  font-size: 26px;
+  user-select: none;
 }
+.icon.violet {
+  background: linear-gradient(180deg, #efe5ff, #e4d6ff);
+  box-shadow: 0 2px 8px rgba(90, 65, 200, .15);
+}
+.icon.orange {
+  background: linear-gradient(180deg, #fff0dc, #ffe4c2);
+  box-shadow: 0 2px 8px rgba(255, 140, 0, .15);
+}
+
+.content { display: grid; gap: 6px; }
 .title {
   margin: 0;
-  font-size: clamp(20px, 3.2vw, 28px);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .3px;
 }
-.subtitle {
-  margin: 6px 0 0;
-  opacity: .8;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
-  margin-top: 12px;
-}
-.card {
-  grid-column: span 12;
-}
-@media (min-width: 720px) {
-  .card { grid-column: span 4; }
-}
-
 .desc {
-  margin: 8px 0 16px;
+  margin: 0;
+  opacity: .8;
   line-height: 1.6;
+  min-height: 1.6em; /* 保证两行时也不跳高 */
 }
 .actions {
+  margin-top: 6px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
-.tips {
-  margin-top: 16px;
-  font-size: 14px;
-  color: #666;
-}
 </style>
