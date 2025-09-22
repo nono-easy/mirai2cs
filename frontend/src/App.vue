@@ -3,15 +3,21 @@
     <el-container class="layout-root">
       <!-- 顶部：吸顶 + 导航 + 调试底色 -->
       <el-header class="header debug-header">
-        <nav class="nav">
-          <router-link to="/">🏠 首页</router-link>
-          <span class="sep">|</span>
-          <router-link to="/about">ℹ️ about</router-link>
-          <span class="sep">|</span>
-          <router-link to="/history">⏲️ 网站日志</router-link>
-          <span class="sep">|</span>
-          <router-link to="/nihon">🌸 日本</router-link>
-        </nav>
+        <div class="nav">
+          <!-- 左：站点标识 -->
+          <router-link to="/" class="brand">mirai2cs.com</router-link>
+
+          <!-- 右：导航链接 -->
+          <div class="links">
+            <router-link to="/">🏠 首页</router-link>
+            <span class="sep">|</span>
+            <router-link to="/nihon">🌸 日本</router-link>
+            <span class="sep">|</span>
+            <router-link to="/about">ℹ️ 关于</router-link>
+            <span class="sep">|</span>
+            <router-link to="/history">⏲️ 网站日志</router-link>
+          </div>
+        </div>
       </el-header>
 
       <!-- 主体：可滚动 + 调试底色 -->
@@ -55,6 +61,20 @@
   min-height: 56px;
 }
 .nav {
+  display: flex;
+  justify-content: space-between; /* 左右分布 */
+  align-items: center;
+  width: 100%;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--el-color-primary);
+  text-decoration: none;
+}
+
+.links {
   display: flex;
   align-items: center;
   gap: 10px;
