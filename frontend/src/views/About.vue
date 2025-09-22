@@ -7,14 +7,14 @@
 
     <el-card>
       <h3>站长是谁？</h3>
-      <p>一名 Java 工程师 🌱 </p>
+      <p>一名 Java 工程师 🌱</p>
       <p>喜欢日漫、galgame，对脑科学充满好奇。</p>
       <p>未来希望探索计算机与二次元的交叉点。</p>
     </el-card>
 
     <el-card>
-      <h3>联系与开源</h3>
-      <p>源码在 <a href="https://github.com/nono-easy/mirai2cs" target="_blank">GitHub</a>，欢迎交流与 Star 🌟</p>
+      <h3>联系站长</h3>
+      <p>📧 邮箱：<strong>nono.mirai2cs@gmail.com</strong></p>
     </el-card>
   </div>
 </template>
