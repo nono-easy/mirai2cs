@@ -14,7 +14,7 @@
 
     <el-card>
       <h3>联系站长</h3>
-      <p>📧 邮箱：<strong>nono.mirai2cs@gmail.com</strong></p>
+      <p>📧 Email：<strong>nono.mirai2cs@gmail.com</strong></p>
     </el-card>
   </div>
 </template>

@@ -1,42 +1,36 @@
 <template>
-  <div class="wrap">
-    <el-card>
-      <div class="content-box">
-        <div class="logo-box">
-          <img
-            src="/mirai2cs-logo.png"
-            alt="Mirai2CS Mascot"
-            class="logo"
-            loading="lazy"
-            width="240"
-            height="240"
-          />
-        </div>
+  <main class="hero-grid">
+    <!-- 左侧 1/3：图片 -->
+    <div class="hero-illustration">
+      <img src="/mirai2cs-logo.png" alt="Mirai2CS Mascot"/>
+    </div>
 
-        <div class="info-box">
-          <h2>mirai2cs.com</h2>
-          <h3>面向未来的计算机科学</h3>
+    <!-- 右侧 2/3：文字 -->
+    <section class="hero-info">
+      <h1>Mirai2CS</h1>
+      <p class="tagline">网站简介占位占位占位占位占位占位占位占位占位占位</p>
 
-          <p>本站的建站日期：<strong>{{ launchDateStr }}</strong></p>
-          <p>已存活：<strong>{{ daysAlive }}</strong> 天</p>
-          <p>今天是：<strong>{{ todayStr }}</strong></p>
-          <p>站长のの希望你今天也要开心哦 😊</p>
+      <ul class="meta">
+        <li>站长のの：Java 软件工程师 🌱</li>
+        <li>兴趣：占位占位占位占位占位占位占位占位</li>
+        <li>兴趣：占位占位占位占位占位占位占位占位</li>
+      </ul>
 
-          <el-divider/>
+      <el-divider/>
 
-          <p class="actions">
-            <a href="https://github.com/nono-easy/mirai2cs" target="_blank" rel="noopener">
-              <el-button type="success">🌟 查看本站源码</el-button>
-            </a>
-            <el-button type="primary" @click="count++">憋戳🌶️ {{ count }}</el-button>
-          </p>
-        </div>
-      </div>
-    </el-card>
-  </div>
+      <p class="actions">
+        <a href="https://github.com/nono-easy/mirai2cs" target="_blank" rel="noopener">
+          <el-button type="success">🌟 查看本站源码</el-button>
+        </a>
+        <el-button type="primary" @click="count++">憋戳🌶️ {{ count }}</el-button>
+      </p>
+
+      <p class="contact">联系我：nono.mirai2cs@gmail.com</p>
+    </section>
+  </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {computed, onMounted, onUnmounted, ref} from 'vue'
 
 const launchDate = new Date('2025-08-24')
@@ -49,7 +43,6 @@ const now = ref(new Date())
 const daysAlive = computed(() => {
   const ms = now.value - launchDate
   const days = Math.floor(ms / 86400000)
-  // 若希望“建站当日记为第1天”，用：return Math.max(0, days) + 1
   return Math.max(0, days)
 })
 
@@ -62,7 +55,7 @@ let timer
 onMounted(() => {
   timer = setInterval(() => {
     now.value = new Date()
-  }, 60000) // 每分钟刷新
+  }, 60000)
 })
 onUnmounted(() => {
   if (timer) clearInterval(timer)
@@ -70,36 +63,108 @@ onUnmounted(() => {
 </script>
 
 <style>
-.wrap {
-  max-width: 900px;
-  margin: 40px auto;
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+:root {
+  --max-w: 1400px;
+  --gap: clamp(24px, 4vw, 56px);
+  --illus-size: clamp(260px, 24vw, 360px);
+  --divider-w: 1px;
+  --divider-color: rgba(0, 0, 0, .10);
+  --divider-offset: calc(var(--gap) / 2);
+  --divider-safe-pad: 80px;
 }
 
-.content-box {
-  display: flex;
+/* 两列布局 */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: var(--gap);
   align-items: center;
-  gap: clamp(16px, 3vw, 28px);
-}
-
-.logo-box {
-  flex: 0 0 240px;
-  text-align: center;
-}
-
-.logo {
-  max-width: 100%;
-  height: auto;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 48px);
+  min-height: calc(100svh - var(--app-header-h) - var(--app-main-pad) * 2);
+  box-sizing: border-box;
+  background: linear-gradient(120deg, #fcf7ee, #f9f6f1);
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.info-box {
-  flex: 1;
+/* 左图 */
+.hero-illustration {
+  display: grid;
+  place-items: center;
+}
+.hero-illustration img {
+  width: var(--illus-size);
+  height: var(--illus-size);
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  transition: transform .3s ease;
+}
+.hero-illustration img:hover {
+  transform: scale(1.04);
 }
 
+/* 右文 */
+.hero-info {
+  position: relative;
+  max-width: 720px;
+  line-height: 1.85;
+  padding-left: calc(var(--divider-offset) + var(--divider-safe-pad));
+}
+.hero-info::before {
+  content: "";
+  position: absolute;
+  left: var(--divider-offset);
+  top: 12%;
+  bottom: 12%;
+  width: var(--divider-w);
+  background: linear-gradient(180deg, transparent, var(--divider-color), transparent);
+  pointer-events: none;
+}
+.hero-info h1 {
+  font-family: 'Audiowide', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  margin: 0 0 10px;
+  letter-spacing: .5px;
+  background: linear-gradient(90deg, #409eff, #e6a23c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tagline {
+  font-size: clamp(16px, 1.4vw, 20px);
+  margin: 6px 0 18px;
+}
+.meta {
+  margin: 0 0 14px 1em;
+}
+.meta li {
+  margin: .2em 0;
+}
+.contact a {
+  text-decoration: underline;
+}
 .actions {
   display: flex;
   gap: 12px;
   margin: 0;
+}
+
+/* 移动端 */
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    row-gap: var(--gap);
+    min-height: auto;
+    border-radius: 0;
+  }
+  .hero-info {
+    padding-left: 0;
+  }
+  .hero-info::before {
+    display: none;
+  }
 }
 </style>
