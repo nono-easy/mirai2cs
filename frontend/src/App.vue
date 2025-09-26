@@ -14,6 +14,16 @@
           <div class="links">
             <router-link to="/">🏠 首页</router-link>
             <span class="sep">|</span>
+            <router-link to="/cs">💻 计算机科学</router-link>
+            <span class="sep">|</span>
+            <router-link to="/anime">📺 动漫</router-link>
+            <span class="sep">|</span>
+            <router-link to="/japanese">🌸 日语</router-link>
+            <span class="sep">|</span>
+            <router-link to="/game">🎮 GAME</router-link>
+            <span class="sep">|</span>
+            <router-link to="/neuroscience">🧠 脑科学</router-link>
+            <span class="sep">|</span>
             <router-link to="/nihon">🌸 日本</router-link>
             <span class="sep">|</span>
             <router-link to="/about">ℹ️ 关于</router-link>

@@ -1,21 +1,29 @@
+
+<script setup>
+
+defineProps({
+  msg: String,
+})
+
+</script>
+
 <template>
-  <div class="under-construction">
+  <div class="center-box">
     <h1>🚧 施工中...</h1>
   </div>
 </template>
 
-<script setup lang="ts">
-// 无需逻辑，展示型组件
-</script>
-
 <style scoped>
-.under-construction {
-  text-align: center;
-  padding: 80px 20px;
-  color: #999;
+.center-box {
+  display: flex;
+  justify-content: center;   /* ✅ 横向居中 */
+  align-items: flex-start;    /* ✅ 顶部对齐 */
+  min-height: 100vh;          /* ✅ 占满整个屏幕高度 */
+  padding-top: 30vh;          /* 👈 纵向偏移量改用百分比（这里是屏幕高度的30%） */
 }
-.under-construction h1 {
-  font-size: 32px;
-  margin-bottom: 16px;
+
+h1 {
+  margin: 0;
+  text-align: center;
 }
 </style>

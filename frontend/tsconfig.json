@@ -1,0 +1,11 @@
+// TypeScript 不认识 @ 路径别名
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["vite/client"]
+  },
+  "include": ["src", "env.d.ts"]
+}
