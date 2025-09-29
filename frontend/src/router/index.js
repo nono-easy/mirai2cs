@@ -12,6 +12,7 @@ const routes = [
   { path: '/anime', name: 'Anime', component: () => import('../views/Anime.vue'), meta: { title: '动漫 - mirai2cs' } },
   { path: '/japanese', name: 'Japanese', component: () => import('../views/Japanese.vue'), meta: { title: '日语 - mirai2cs' } },
   { path: '/game', name: 'Game', component: () => import('../views/Game.vue'), meta: { title: '游戏 - mirai2cs' } },
+  { path: '/test', name: 'Test', component: () => import('../views/Test.vue'), meta: { title: '测试' } },
   { path: '/neuroscience', name: 'Neuroscience', component: () => import('../views/Neuroscience.vue'), meta: { title: '脑科学 - mirai2cs' } },
   { path: '/nihon', name: 'Nihon', component: () => import('../views/Nihon.vue'), meta: { title: '日本 - mirai2cs' } }
 ]
