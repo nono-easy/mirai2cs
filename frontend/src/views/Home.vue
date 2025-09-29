@@ -2,25 +2,32 @@
   <main class="hero-grid">
     <!-- 左侧：站娘插画 -->
     <div class="hero-illustration">
-      <img src="/mirai2cs-logo.png" alt="Mirai2CS Mascot"/>
+      <img src="/mirai2cs-logo.png" alt="Mirai2CS Mascot" />
     </div>
 
     <!-- 右侧：文字区域 -->
     <section class="hero-info">
       <h1>Mirai2CS</h1>
       <p class="tagline">面向未来的计算机科学</p>
-      <el-divider/>
+      <el-divider />
       <p class="contact">
         联系站长のの：nono.mirai2cs@gmail.com
       </p>
-      <el-button type="primary">
-        <el-icon><Search /></el-icon>
-        Search
-      </el-button>
-      <el-button type="primary" :icon="Search">Search</el-button>
+      <div class="hero-actions">
+        <el-button type="primary" @click="goToGithub">
+          <img src="@/assets/github.svg" class="icon" alt="GitHub" />
+          GitHub
+        </el-button>
+      </div>
     </section>
   </main>
 </template>
+
+<script setup>
+const goToGithub = () => {
+  window.open("https://github.com/nono-easy/mirai2cs", "_blank")
+}
+</script>
 
 <style>
 /* ===============================
@@ -154,5 +161,18 @@
   .hero-info::before {
     display: none;
   }
+}
+
+.hero-actions {
+  margin-top: 24px;
+  text-align: left;
+}
+
+/* 调整图标大小和对齐 */
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 </style>
