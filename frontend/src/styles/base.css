@@ -1,0 +1,52 @@
+:root{
+  --app-header-h:56px;
+  --app-main-pad:16px;
+  --app-max-w:1200px;
+  --app-side-pad:16px;
+  --app-border:rgba(0,0,0,.08);
+  --muted-fg:rgba(0,0,0,.6);
+}
+
+/* 统一盒模型 + 文本渲染 */
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; }
+body{
+  min-height:100svh;                /* 避开 100vh 陷阱 */
+  overflow-x:clip;                   /* 切掉 0~1px 横向溢出 */
+  scrollbar-gutter:stable both-edges;/* 有无滚动条不抖动 */
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* 统一容器，杜绝 100vw */
+.container{
+  max-width:var(--app-max-w);
+  margin-inline:auto;
+  padding-inline:var(--app-side-pad);
+}
+
+/* 媒体不超宽 */
+img,video,canvas,svg{ display:block; max-width:100%; height:auto; }
+
+/* 首尾外边距塌陷兜底（App.vue 里还有一层 .page-wrap 1px 兜） */
+main > :first-child{ margin-block-start:0 !important; }
+main > :last-child{  margin-block-end:0 !important; }
+
+/* 单一滚动源：全局。页面容器不要随便加 overflow:auto */
+html,body,#app{ overflow-y:auto; }
+.app-main,.container{ overflow:visible; }
+
+/* 防 100vw 误用 */
+[style*="100vw"]{ width:100% !important; }
+
+/* 小屏时超宽表格/网格收敛 */
+table,.auto-shrink{ max-width:100%; overflow:hidden; }
+
+/* 可访问性：保留清晰焦点 */
+:focus-visible{ outline:2px solid #409eff; outline-offset:2px; }
+
+/* 不允许在页面内容里出现 footer，一旦出现就隐藏（兜底） */
+main > footer,
+.page-wrap > footer {
+  display: none !important;
+}
