@@ -119,6 +119,8 @@
   /* 给 router-view 的上下留白交给变量，页面内部可用它做 calc */
   padding: var(--app-main-pad) 0;
   overflow: visible;    /* 建议 visible，防止出现主区+子区双滚动条 */
+  /* ⬇️ 让主区最小高度 = 视口高度 - 头部 - 上下内边距 */
+  min-height: calc(100svh - var(--app-header-h) - var(--app-main-pad) * 2);
 }
 
 /* —— 调试底色 —— */

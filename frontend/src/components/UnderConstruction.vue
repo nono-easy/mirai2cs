@@ -15,15 +15,14 @@ defineProps({
 
 <style scoped>
 .center-box {
-  display: flex;
-  justify-content: center;   /* ✅ 横向居中 */
-  align-items: flex-start;    /* ✅ 顶部对齐 */
-  min-height: 100vh;          /* ✅ 占满整个屏幕高度 */
-  padding-top: 30vh;          /* 👈 纵向偏移量改用百分比（这里是屏幕高度的30%） */
+  display: grid;
+  place-items: center;  /* 居中就好 */
+  min-height: 100%;     /* 占满父容器(main)的可见高度 */
 }
 
 h1 {
   margin: 0;
   text-align: center;
+  transform: translateY(30vh); /* 视觉下移，不增加布局高度 */
 }
 </style>
