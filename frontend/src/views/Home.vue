@@ -9,6 +9,7 @@
     <section class="hero-info">
       <h1>Mirai2CS</h1>
       <p class="tagline">面向未来的计算机科学</p>
+      <p class="tagline">变化测试</p>
       <el-divider />
       <p class="contact">
         联系站长のの：nono.mirai2cs@gmail.com
