@@ -1,159 +1,178 @@
 <template>
-  <section class="shards container" aria-labelledby="topics-title">
-    <header class="section-header">
-      <h2 id="topics-title">按主题浏览</h2>
-      <p class="section-sub">像选关一样，点进你感兴趣的领域～</p>
-    </header>
-
-    <!-- 桌面端：碎片拼图 -->
-    <div class="shard-stage" role="list" aria-label="主题拼图导航">
-      <router-link
-        v-for="(t, i) in topics"
-        :key="t.to"
-        :to="t.to"
-        class="shard"
-        role="listitem"
-        :class="`shard-${i+1}`"
-        :aria-label="t.title"
-        tabindex="0"
-      >
-        <div class="shard-inner">
-          <span class="shard-title">{{ t.emoji }} {{ t.title }}</span>
-          <span class="shard-sub">{{ t.sub }}</span>
-        </div>
-      </router-link>
+  <main class="hero-grid">
+    <!-- 左侧：站娘插画 -->
+    <div class="hero-illustration">
+      <img src="/mirai2cs-logo.png" alt="Mirai2CS Mascot" />
     </div>
 
-    <!-- 移动端：降级为普通网格 -->
-    <div class="mobile-grid">
-      <router-link v-for="t in topics" :key="`m-${t.to}`" :to="t.to" class="mcard">
-        <strong>{{ t.emoji }} {{ t.title }}</strong>
-        <span>{{ t.sub }}</span>
-      </router-link>
-    </div>
-  </section>
+    <!-- 右侧：文字区域 -->
+    <section class="hero-info">
+      <h1>Mirai2CS</h1>
+      <p class="tagline">面向未来的计算机科学</p>
+      <el-divider />
+      <p class="contact">
+        联系站长のの：nono.mirai2cs@gmail.com
+      </p>
+      <div class="hero-actions">
+        <el-button type="primary" @click="goToGithub">
+          <img src="../assets/github-mark-white.svg" class="icon" alt="GitHub" />
+          GitHub
+        </el-button>
+      </div>
+    </section>
+  </main>
 </template>
 
-<script setup lang="ts">
-const topics = [
-  { title: '计算机科学', sub: 'Java / 算法 / 系统 / 工程化', emoji: '💻', to: '/cs' },
-  { title: '动漫・Galgame', sub: '观影札记 / 推荐 / 杂谈', emoji: '📺', to: '/anime' },
-  { title: '日语', sub: '学习法 / 语法要点 / 资料', emoji: '🌸', to: '/japanese' },
-  { title: '脑科学', sub: '神经科学 / 认知 / AI与脑', emoji: '🧠', to: '/neuroscience' },
-  { title: '实验室・随想', sub: '小项目 / 想法 / 试验田', emoji: '🧪', to: '/lab' },
-  { title: '网站日志', sub: '迭代记录 / 变更', emoji: '⏲️', to: '/history' },
-]
+<script setup>
+const goToGithub = () => {
+  window.open("https://github.com/nono-easy/mirai2cs", "_blank")
+}
 </script>
 
-<style scoped>
+<style>
+/* ===============================
+   1️⃣ 基础变量（可与全局 Token 合并）
+   =============================== */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 :root {
-  --container-max: 1120px;
-  --space-2: 12px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-6: 32px;
-  --radius-xl: 16px;
-  --brand: var(--el-color-primary, #409eff);
-  --muted: color-mix(in srgb, var(--el-text-color-primary) 60%, transparent);
+  /* 尺寸与间距 */
+  --layout-max-w: 1400px;
+  --layout-gap: clamp(24px, 4vw, 56px);
+  --layout-pad: clamp(24px, 4vw, 48px);
+
+  /* 插画大小 */
+  --illus-size: clamp(260px, 24vw, 360px);
+
+  /* 分隔线 */
+  --divider-w: 1px;
+  --divider-color: rgba(0, 0, 0, 0.1);
+  --divider-offset: calc(var(--layout-gap) / 2);
+  --divider-safe-pad: 80px;
+
+  /* 渐变背景 */
+  --hero-bg: linear-gradient(120deg, #fcf7ee, #f9f6f1);
+  --title-grad: linear-gradient(90deg, #409eff, #e6a23c);
 }
 
-/* 区块标题沿用你现有风格 */
-.section-header { margin: var(--space-6) 0 var(--space-3); }
-.section-sub { opacity: .75; margin-top: var(--space-2); }
+/* ===============================
+   2️⃣ 布局结构（网格 / 排版 / 尺寸）
+   =============================== */
 
-/* ===== 桌面端碎片舞台 ===== */
-.shard-stage {
-  position: relative;
-  aspect-ratio: 1 / 1;
-  max-width: 920px;
-  margin: 0 auto var(--space-6);
-  border-radius: 24px;
-  background:
-    radial-gradient(120% 120% at 10% 0%, #fff 0%, #f7fbff 50%, #eef5ff 100%);
-  box-shadow: 0 10px 32px rgba(0,0,0,.06) inset, 0 8px 28px rgba(0,0,0,.06);
-  overflow: hidden;
-}
-
-/* 每一个碎片都是一个绝对定位的 router-link，clip-path 切形 */
-.shard {
-  position: absolute;
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  transition: transform .18s ease, filter .18s ease, scale .18s ease;
-  will-change: transform;
-  /* 让点击区域更友好 */
-  -webkit-tap-highlight-color: transparent;
-}
-.shard:focus-visible .shard-inner {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
-}
-
-.shard-inner {
-  height: 100%;
-  width: 100%;
-  padding: clamp(10px, 1.6vw, 18px);
+/* 主容器：两列网格布局 */
+.hero-grid {
   display: grid;
-  align-content: end;
-  gap: 6px;
-  background: #fff;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,.08));
-  transition: background .2s ease;
-}
-.shard:hover { transform: translateY(-2px); }
-.shard:hover .shard-inner { background: #fff; }
+  grid-template-columns: 1fr 2fr;
+  column-gap: var(--layout-gap);
+  align-items: center;
+  max-width: var(--layout-max-w);
+  margin: 0 auto;
+  padding: var(--layout-pad);
 
-.shard-title { font-weight: 700; }
-.shard-sub { font-size: 14px; color: var(--muted); }
+  /* 依赖外部 header 高度的动态高度控制 */
+  min-height: 85svh;
 
-/* —— 定义 6 块碎片的位置与形状（百分比相对舞台） —— */
-/* 你可以随意微调 top/left/width/height，以及 polygon 坐标 */
-.shard-1 { top: 6%; left: 6%; width: 38%; height: 28%;
-  clip-path: polygon(6% 8%, 96% 0%, 100% 72%, 10% 100%);
-}
-.shard-2 { top: 8%; left: 46%; width: 48%; height: 26%;
-  clip-path: polygon(0% 16%, 100% 6%, 86% 100%, 10% 86%);
-}
-.shard-3 { top: 34%; left: 8%; width: 40%; height: 28%;
-  clip-path: polygon(0% 10%, 92% 0%, 100% 84%, 10% 100%);
-}
-.shard-4 { top: 34%; left: 50%; width: 40%; height: 30%;
-  clip-path: polygon(6% 0%, 100% 12%, 86% 100%, 0% 84%);
-}
-.shard-5 { top: 64%; left: 10%; width: 35%; height: 26%;
-  clip-path: polygon(4% 0%, 100% 10%, 96% 100%, 0% 86%);
-}
-.shard-6 { top: 64%; left: 48%; width: 44%; height: 28%;
-  clip-path: polygon(0% 12%, 92% 0%, 100% 78%, 12% 100%);
+  box-sizing: border-box;
+  background: var(--hero-bg);
+  border-radius: 16px;
 }
 
-/* 悬停微交互：略微放大 + 提升阴影层次 */
-.shard:hover { scale: 1.02; }
-.shard:hover .shard-inner { filter: drop-shadow(0 12px 24px rgba(0,0,0,.12)); }
-
-/* ===== 移动端降级：使用普通网格卡片，保证可读性与可点性 ===== */
-.mobile-grid {
-  display: none;
+/* 左侧插画区域：居中承载 */
+.hero-illustration {
+  display: grid;
+  place-items: center;
 }
-@media (max-width: 768px) {
-  .shard-stage { display: none; }
-  .mobile-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3);
+
+/* 右侧文字区域：留出分隔线空间 */
+.hero-info {
+  position: relative;
+  max-width: 720px;
+  line-height: 1.85;
+  padding-left: calc(var(--divider-offset) + var(--divider-safe-pad));
+}
+
+/* ===============================
+   3️⃣ 视觉层（颜色 / 字体 / 动效 / 分隔线）
+   =============================== */
+
+/* 插画图片 */
+.hero-illustration img {
+  width: var(--illus-size);
+  height: var(--illus-size);
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.hero-illustration img:hover {
+  transform: scale(1.04);
+}
+
+/* 分隔线（桌面端） */
+.hero-info::before {
+  content: '';
+  position: absolute;
+  left: var(--divider-offset);
+  top: 12%;
+  bottom: 12%;
+  width: var(--divider-w);
+  background: linear-gradient(180deg, transparent, var(--divider-color), transparent);
+  pointer-events: none;
+}
+
+/* 标题：渐变文字 */
+.hero-info h1 {
+  font-family: 'Audiowide', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  margin: 0 0 10px;
+  letter-spacing: 0.5px;
+  background: var(--title-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 副标题 */
+.tagline {
+  font-size: clamp(16px, 1.4vw, 20px);
+  margin: 6px 0 18px;
+}
+
+/* 联系方式 */
+.contact a {
+  text-decoration: underline;
+}
+
+/* ===============================
+   4️⃣ 响应式（集中处理媒体查询）
+   =============================== */
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    row-gap: var(--layout-gap);
+    min-height: auto;
+    border-radius: 0;
   }
-  .mcard {
-    background: #fff;
-    border-radius: var(--radius-xl);
-    padding: var(--space-4);
-    box-shadow: 0 6px 24px rgba(0,0,0,.06);
-    display: grid;
-    gap: 6px;
-    text-decoration: none;
-    color: inherit;
+
+  .hero-info {
+    padding-left: 0;
   }
-  .mcard strong { font-weight: 700; }
-  .mcard span { color: var(--muted); font-size: 14px; }
+
+  .hero-info::before {
+    display: none;
+  }
+}
+
+.hero-actions {
+  margin-top: 24px;
+  text-align: left;
+}
+
+/* 调整图标大小和对齐 */
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 </style>
