@@ -1,1 +1,1 @@
-# https://mirai2cs.com/
+个人网站 | personal website
