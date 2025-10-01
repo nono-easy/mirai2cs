@@ -15,7 +15,7 @@
       </p>
       <div class="hero-actions">
         <el-button type="primary" @click="goToGithub">
-          <img src="../assets/github-mark-white.svg" class="icon" alt="GitHub" />
+          <img src="../../assets/github-mark-white.svg" class="icon" alt="GitHub" />
           GitHub
         </el-button>
       </div>
