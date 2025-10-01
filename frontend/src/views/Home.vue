@@ -70,7 +70,7 @@ const goToGithub = () => {
   padding: var(--layout-pad);
 
   /* 依赖外部 header 高度的动态高度控制 */
-  min-height: calc(100svh - var(--app-header-h) - var(--app-main-pad) * 2);
+  min-height: 85svh;
 
   box-sizing: border-box;
   background: var(--hero-bg);
