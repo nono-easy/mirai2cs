@@ -7,8 +7,8 @@
 
     <!-- 右侧：文字区域 -->
     <section class="hero-info">
-      <h1>Mirai2CS</h1>
-      <p class="tagline">面向未来的计算机科学</p>
+      <GradientTitle>Mirai2CS</GradientTitle>
+      <p class="tagline">のの的个人网站</p>
       <el-divider />
       <p class="contact">
         联系站长のの：nono.mirai2cs@gmail.com
@@ -27,6 +27,7 @@
 const goToGithub = () => {
   window.open("https://github.com/nono-easy/mirai2cs", "_blank")
 }
+import GradientTitle from '@/components/common/GradientTitle.vue'
 </script>
 
 <style>
