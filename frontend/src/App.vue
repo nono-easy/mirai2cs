@@ -8,16 +8,15 @@
           <span class="brand-text">Mirai2CS</span>
         </router-link>
 
-        <nav class="links" aria-label="主导航">
-          <router-link to="/">🏠 首页</router-link>
-          <router-link to="/cs">💻 计算机科学</router-link>
-          <router-link to="/anime">📺 动漫</router-link>
-          <router-link to="/japanese">🌸 日语</router-link>
-          <router-link to="/game">🎮 GAME</router-link>
-          <router-link to="/neuroscience">🧠 脑科学</router-link>
-          <router-link to="/about">ℹ️ 关于</router-link>
-          <router-link to="/history">⏲️ 网站日志</router-link>
-        </nav>
+        <div class="nav-actions">
+          <el-button type="text" class="nav-btn" @click="$router.push('/')">
+            🏠 首页
+          </el-button>
+          <el-button type="primary" @click="goToGithub">
+            <img src="../src/assets/github-mark-white.svg" class="icon" alt="GitHub" />
+            GitHub
+          </el-button>
+        </div>
       </div>
     </header>
 
@@ -26,7 +25,7 @@
       <div class="container">
         <!-- 将首尾外边距塌陷风险内收：用 wrapper 兜底 -->
         <div class="page-wrap">
-          <router-view />
+          <router-view/>
         </div>
       </div>
     </main>
@@ -41,14 +40,16 @@
 </template>
 
 <script setup lang="ts">
-// 无逻辑
+const goToGithub = () => {
+  window.open("https://github.com/nono-easy/mirai2cs", "_blank")
+}
 </script>
 
 <style scoped>
 /* 局部：仅与本组件结构相关的样式；全局规则放 base.css */
 
 .app-root {
-  min-height: 100svh;                /* 更稳于 100vh */
+  min-height: 100svh; /* 更稳于 100vh */
   display: grid;
   grid-template-rows: auto 1fr auto; /* 头/主/脚 */
 }
@@ -71,6 +72,31 @@
   align-items: center;
   justify-content: space-between;
 }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* 按钮之间的间距 */
+}
+.nav-btn {
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--el-text-color-primary);
+  border: none;
+}
+.nav-btn:focus,
+.nav-btn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}
 
 .brand {
   display: inline-flex;
@@ -78,11 +104,14 @@
   gap: 8px;
   text-decoration: none;
 }
+
 .brand-logo {
-  inline-size: 32px; block-size: 32px;
+  inline-size: 32px;
+  block-size: 32px;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
 }
+
 .brand-text {
   font-weight: 800;
   font-size: 20px;
@@ -90,10 +119,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.links {
-  display: flex; gap: 14px; flex-wrap: wrap;
+
+.links a {
+  text-decoration: none;
 }
-.links a { text-decoration: none; }
 
 /* Main：只做“承载 + 呼吸间距”，不设置 100vh/100% 高度 */
 .app-main {
@@ -101,7 +130,11 @@
 }
 
 /* 兜底：防止页面第一个/最后一个子元素的 margin 影响整体高度 */
-.page-wrap { padding-block: 1px; } /* 1px 抵消 margin 折叠，无视觉影响 */
+.page-wrap {
+  padding-block: 1px;
+}
+
+/* 1px 抵消 margin 折叠，无视觉影响 */
 
 /* Footer */
 .app-footer {
@@ -111,5 +144,8 @@
   font-size: 14px;
   background: var(--el-bg-color);
 }
-.footer-inner { text-align: center; }
+
+.footer-inner {
+  text-align: center;
+}
 </style>
