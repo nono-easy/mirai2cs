@@ -12,7 +12,14 @@
           <el-button type="text" class="nav-btn" @click="$router.push('/')">
             🏠 首页
           </el-button>
-          <el-button type="primary" @click="goToGithub">
+          <el-button
+            type="primary"
+            tag="a"
+            href="https://github.com/nono-easy/mirai2cs"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="gh-btn"
+          >
             <img src="../src/assets/github-mark-white.svg" class="icon" alt="GitHub" />
             GitHub
           </el-button>
@@ -40,9 +47,6 @@
 </template>
 
 <script setup lang="ts">
-const goToGithub = () => {
-  window.open("https://github.com/nono-easy/mirai2cs", "_blank")
-}
 </script>
 
 <style scoped>
@@ -77,6 +81,8 @@ const goToGithub = () => {
   align-items: center;
   gap: 12px; /* 按钮之间的间距 */
 }
+
+/* 仅作用于导航区的按钮，避免全局影响 */
 .nav-btn {
   font-size: 16px;
   font-weight: 500;
@@ -124,14 +130,22 @@ const goToGithub = () => {
   text-decoration: none;
 }
 
-/* Main：只做“承载 + 呼吸间距”，不设置 100vh/100% 高度 */
+/* ✅ main 不再用 padding 挤高 */
 .app-main {
-  padding-block: var(--app-main-pad);
+  padding: 0;
+  min-height: 0;         /* 允许 1fr 轨道内正确收缩 */
 }
 
-/* 兜底：防止页面第一个/最后一个子元素的 margin 影响整体高度 */
+/* ✅ main 内的 container 铺满高度（保持 block 即可，避免 grid 触发收缩计算） */
+.app-main > .container {
+  block-size: 100%;
+  display: block;
+}
+
+/* ✅ wrapper 铺满，并去掉 1px 兜底 padding（那 2px 会导致“看似超高”） */
 .page-wrap {
-  padding-block: 1px;
+  block-size: 100%;
+  padding: 0;
 }
 
 /* 1px 抵消 margin 折叠，无视觉影响 */
