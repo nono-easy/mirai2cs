@@ -3,45 +3,46 @@
     <ModuleCard
       title="我能做的"
       :actions="[
-        { label: '占位符1', to: '/' },
-        { label: '占位符2', to: '/' },
-        { label: '占位符3', to: '/' }
+        { label: '软件工程', to: '/software-engineering' },
+        { label: '沟通', to: '/' }
       ]"
     />
 
     <ModuleCard
       title="我擅长的"
       :actions="[
-        { label: '占位符1', to: '/' },
-        { label: '占位符2', to: '/' },
-        { label: '占位符3', to: '/' }
+        { label: '思考', to: '/' },
+        { label: '整理', to: '/' }
       ]"
     />
 
     <ModuleCard
       title="我喜欢的"
       :actions="[
-        { label: '占位符1', to: '/' },
-        { label: '占位符2', to: '/' },
-        { label: '占位符3', to: '/' }
+        { label: '游戏', to: '/' },
+        { label: '解密', to: '/' },
+        { label: '番剧', to: '/' }
       ]"
     />
 
     <ModuleCard
       title="我思考的"
       :actions="[
-        { label: '占位符1', to: '/' },
-        { label: '占位符2', to: '/' },
-        { label: '占位符3', to: '/' }
+        { label: '百科', to: '/' },
+        { label: '日常', to: '/' },
+        { label: '脑洞', to: '/' }
       ]"
     />
 
     <ModuleCard
       title="我想做的"
       :actions="[
-        { label: '占位符1', to: '/' },
-        { label: '占位符2', to: '/' },
-        { label: '占位符3', to: '/' }
+        { label: '语言', to: '/' },
+        { label: '工商', to: '/' },
+        { label: '投资', to: '/' },
+        { label: '硬件', to: '/' },
+        { label: '乐器', to: '/' },
+        { label: '脑科学', to: '/' }
       ]"
     />
   </main>
