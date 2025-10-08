@@ -10,20 +10,6 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
-  build: {
-    chunkSizeWarningLimit: 1200,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('vue')) return 'vendor-vue'
-            if (id.includes('element-plus')) return 'vendor-element-plus'
-            return 'vendor'
-          }
-        }
-      }
-    }
   }
 })
 
