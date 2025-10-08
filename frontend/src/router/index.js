@@ -1,14 +1,7 @@
-import {createRouter, createWebHistory} from 'vue-router'
+﻿import {createRouter, createWebHistory} from 'vue-router'
 
 // 路由表（按你的 4 个页面）
 const routes = [
-  // 兜底 404
-  {
-    path: '/:pathMatch(.*)*',
-    name: 'NotFound',
-    component: () => import('../views/core/NotFound.vue'),
-    meta: {title: '404 - 页面不存在'}
-  },
   // 具体路由
   {path: '/', name: 'Home', component: () => import('../views/core/Home.vue'), meta: {title: '首页 - mirai2cs'}},
   {
@@ -60,6 +53,13 @@ const routes = [
     name: 'Nihon',
     component: () => import('../views/culture/Nihon.vue'),
     meta: {title: '日本 - mirai2cs'}
+  },
+  // 兜底 404（应放在末尾）
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('../views/core/NotFound.vue'),
+    meta: {title: '404 - 页面不存在'}
   }
 ]
 
