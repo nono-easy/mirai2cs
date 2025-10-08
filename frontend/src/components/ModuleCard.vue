@@ -2,7 +2,7 @@
   <section class="module-card">
     <!-- 标题行（可选图标） -->
     <header class="card-head">
-      <slot name="icon" />
+      <slot name="icon"/>
       <h3 class="card-title">{{ title }}</h3>
     </header>
 
@@ -64,12 +64,13 @@ defineProps<{
   background: #fff;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
   transition: transform .18s ease, box-shadow .18s ease;
 }
+
 .module-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .10);
 }
 
 .card-head {
@@ -78,6 +79,7 @@ defineProps<{
   gap: 10px;
   margin-bottom: 12px;
 }
+
 .card-title {
   margin: 0;
   font-size: 18px;
@@ -86,11 +88,24 @@ defineProps<{
 
 .card-actions {
   display: flex;
-  flex-wrap: wrap;     /* ✅ 自动换行 */
-  gap: 10px;           /* 按钮间距 */
+  flex-wrap: wrap;
+  justify-content: flex-start; /* 行首贴左 */
+  align-content: flex-start;
+  gap: 10px; /* 用 gap 控间距 */
+}
+
+/* 关键：覆盖 Element Plus 的 “相邻按钮左外边距” */
+.card-actions :deep(.el-button + .el-button) {
+  margin-left: 0 !important;
 }
 
 /* 导航区域常见的焦点高亮处理（仅按钮自身） */
-.subbtn { -webkit-tap-highlight-color: transparent; }
-.subbtn:focus, .subbtn:focus-visible { outline: none; box-shadow: none; }
+.subbtn {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.subbtn:focus, .subbtn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
 </style>
