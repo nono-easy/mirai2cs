@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -25,3 +26,4 @@ export default defineConfig({
     }
   }
 })
+
