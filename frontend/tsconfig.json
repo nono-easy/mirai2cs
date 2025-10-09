@@ -1,13 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "lib": ["es2017", "dom"],
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",          // ✅ 也可用 "node16" 或 "nodenext"
+    "types": ["node", "vite/client"],       // ✅ 让 TS 认识 Node 与 import.meta
+    "allowJs": true,
+    "jsx": "preserve",
+    "strict": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    },
-    "types": ["vite/client"],
-    "moduleResolution": "bundler"
+    }
   },
-  "include": ["src", "env.d.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "vite.config.ts",
+    "env.d.ts"
+  ]
 }

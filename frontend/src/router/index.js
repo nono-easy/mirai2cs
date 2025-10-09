@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/software-engineering',
     name: 'SoftwareEngineering',
-    component: () => import('../views/can/SoftwareEngineering.vue'),
+    component: () => import('@/pages/software-engineering/index.md'),
     meta: {title: '软件工程 - mirai2cs'}
   },
   {path: '/about', name: 'About', component: () => import('../views/core/About.vue'), meta: {title: '关于 - mirai2cs'}},
