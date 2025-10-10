@@ -19,7 +19,7 @@ export default defineConfig({
 
     // Markdown -> Vue
     Markdown({
-      headEnabled: false,
+      headEnabled: true,
       frontmatter: true,
       wrapperClasses: 'article-md',
       // 先不加 markdown-it 插件，跑通后再按需添加
