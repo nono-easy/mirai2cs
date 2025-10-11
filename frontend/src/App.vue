@@ -4,7 +4,7 @@
     <header class="app-header">
       <div class="container nav">
         <router-link to="/" class="brand" aria-label="Mirai2CS Home">
-          <img src="/mirai2cs-logo.png" alt="" class="brand-logo" />
+          <img src="/mirai2cs-logo.png" alt="" class="brand-logo"/>
           <span class="brand-text">Mirai2CS</span>
         </router-link>
 
@@ -20,7 +20,7 @@
             rel="noopener noreferrer"
             class="gh-btn"
           >
-            <img src="../src/assets/github-mark-white.svg" class="icon" alt="GitHub" />
+            <img src="../src/assets/github-mark-white.svg" class="icon" alt="GitHub"/>
             GitHub
           </el-button>
         </div>
@@ -47,6 +47,25 @@
 </template>
 
 <script setup lang="ts">
+import {onMounted, onBeforeUnmount} from 'vue'
+
+onMounted(() => {
+  let oldTitle = document.title
+  const observer = new MutationObserver(() => {
+    if (document.title !== oldTitle) {
+      console.log('标题变化:', oldTitle, '→', document.title)
+      oldTitle = document.title
+    }
+  })
+  observer.observe(document.querySelector('title')!, {
+    subtree: true,
+    characterData: true,
+    childList: true
+  })
+
+  // 页面卸载时清理
+  onBeforeUnmount(() => observer.disconnect())
+})
 </script>
 
 <style scoped>
@@ -76,6 +95,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -92,6 +112,7 @@
   color: var(--el-text-color-primary);
   border: none;
 }
+
 .nav-btn:focus,
 .nav-btn:focus-visible {
   outline: none;
@@ -133,7 +154,7 @@
 /* ✅ main 不再用 padding 挤高 */
 .app-main {
   padding: 0;
-  min-height: 0;         /* 允许 1fr 轨道内正确收缩 */
+  min-height: 0; /* 允许 1fr 轨道内正确收缩 */
 }
 
 /* ✅ main 内的 container 铺满高度（保持 block 即可，避免 grid 触发收缩计算） */
