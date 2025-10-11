@@ -37,10 +37,10 @@ export default defineConfig({
     }),
 
     visualizer({
-      filename: 'stats.html',
+      filename: './stats.html',
       gzipSize: true,
       brotliSize: true,
-      emitFile: true,
+      emitFile: false,
       open: false,
     }),
   ],
