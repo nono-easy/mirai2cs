@@ -75,5 +75,10 @@ router.afterEach((to) => {
   document.title = to.meta?.title ?? 'mirai2cs'
 })
 
+router.afterEach((to) => {
+  const t = (to.meta as any)?.title
+  if (t) document.title = t
+})
+
 export default router
 export { routes }
