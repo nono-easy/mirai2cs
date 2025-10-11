@@ -48,6 +48,12 @@
 
 <script setup lang="ts">
 import {onMounted, onBeforeUnmount} from 'vue'
+import { useHead } from '@unhead/vue'
+
+useHead({
+  // 有子标题时：`子标题 - mirai2cs`；没有时：`mirai2cs`
+  titleTemplate: (chunk) => (chunk ? `${chunk} - mirai2cs` : 'mirai2cs'),
+})
 
 onMounted(() => {
   let oldTitle = document.title

@@ -51,6 +51,8 @@
 <script setup>
 // 当前组件暂无逻辑
 import ModuleCard from "@/components/ModuleCard.vue";
+import { useHead } from '@unhead/vue'
+useHead({ title: '首页' })
 </script>
 
 <style>
