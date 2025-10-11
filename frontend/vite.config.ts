@@ -42,6 +42,7 @@ export default defineConfig({
       filename: 'stats.html',
       gzipSize: true,
       brotliSize: true,
+      emitFile: true,
       open: false, // 构建后手动打开 /dist/stats.html
     }),
   ],
