@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
+// 体积分布报告
+import { visualizer } from 'rollup-plugin-visualizer'
 
 // 新：把 Markdown 编译成 Vue 组件（兼容 Vite 7）
 import Markdown from 'unplugin-vue-markdown/vite'
@@ -35,6 +37,12 @@ export default defineConfig({
     Layouts({
       layoutsDirs: 'src/layouts',
       defaultLayout: 'article', // 你会新建 src/layouts/article.vue
+    }),
+    visualizer({
+      filename: 'stats.html',
+      gzipSize: true,
+      brotliSize: true,
+      open: false, // 构建后手动打开 /dist/stats.html
     }),
   ],
 
