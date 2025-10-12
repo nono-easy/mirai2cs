@@ -1,24 +1,39 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# === 基础通用 ===
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+Thumbs.db
+*.log
+*.local
+*.tmp
+*.bak
+
+# === Node / Vite ===
+node_modules/
+dist/
+.vite/
+.cache/
+.temp/
+
+# === 依赖锁文件 ===
+# 使用 pnpm，因此忽略 npm/yarn 的锁文件
+package-lock.json
+yarn.lock
+
+# === 自动生成的类型文件（由 unplugin 自动生成）===
+auto-imports.d.ts
+components.d.ts
+
+# === 构建分析、统计文件 ===
+stats.html
+
+# === 环境变量文件 ===
+.env
+.env.*
+!.env.example
+
+# === 编辑器/IDE ===
+.idea/
+.vscode/
+
+# === 系统文件 ===
 *.sw?
+*~
