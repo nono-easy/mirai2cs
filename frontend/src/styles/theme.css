@@ -1,14 +1,12 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-base), serif;
   line-height: 1.5;
   font-weight: 400;
   color: var(--el-text-color-primary);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
 }
 
+/* 链接 */
 a {
   font-weight: 500;
   color: #646cff;
@@ -18,12 +16,7 @@ a:hover {
   color: #535bf2;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-/* 仅作用于原生 <button>，不影响 Element Plus 的 <el-button> */
+/* 按钮 */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -38,16 +31,13 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
+/* 浅色模式 */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
-  } /* 如与站点米色底冲突，可移除这行背景色 */
+  }
   a:hover {
     color: #747bff;
   }

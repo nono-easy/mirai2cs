@@ -71,8 +71,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* 局部：仅与本组件结构相关的样式；全局规则放 base.css */
-
 .app-root {
   min-height: 100svh; /* 更稳于 100vh */
   display: grid;

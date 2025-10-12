@@ -1,0 +1,15 @@
+/* 设计变量：尺寸、颜色、间距等 */
+:root {
+  /* 尺寸 */
+  --app-header-h: 56px;
+  --app-main-pad: 16px;
+  --app-max-w: 1200px;
+  --app-side-pad: 16px;
+
+  /* 边框与颜色 */
+  --app-border: rgba(0, 0, 0, 0.08);
+  --muted-fg: rgba(0, 0, 0, 0.6);
+
+  /* 字体 */
+  --font-family-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}

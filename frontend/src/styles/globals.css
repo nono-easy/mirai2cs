@@ -1,0 +1,43 @@
+/* 统一盒模型与渲染优化 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  min-height: 100svh;
+  overflow-x: clip;
+  scrollbar-gutter: stable both-edges;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 容器 */
+.container {
+  max-width: var(--app-max-w);
+  margin-inline: auto;
+  padding-inline: var(--app-side-pad);
+}
+
+/* 媒体 */
+img, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 焦点可见性 */
+:focus-visible {
+  outline: 2px solid #409eff;
+  outline-offset: 2px;
+}
+
+/* 页尾兜底 */
+main > footer,
+.page-wrap > footer {
+  display: none !important;
+}
