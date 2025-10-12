@@ -1,4 +1,4 @@
-// main.ts
+// createApp，挂 router/head/全局样式
 import { createApp } from 'vue'
 import { createHead } from '@unhead/vue/client'
 import App from './App.vue'
