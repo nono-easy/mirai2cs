@@ -37,3 +37,7 @@ stats.html
 # === 系统文件 ===
 *.sw?
 *~
+
+# Auto-generated type declarations
+auto-imports.d.ts
+components.d.ts
