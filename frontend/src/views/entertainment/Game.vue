@@ -1,6 +1,6 @@
 <template>
   <div>
-    <UnderConstruction/>
+    <UnderConstruction />
   </div>
 </template>
 

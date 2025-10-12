@@ -4,7 +4,7 @@
       title="我能做的"
       :actions="[
         { label: '软件工程', to: '/software-engineering' },
-        { label: '沟通', to: '/' }
+        { label: '沟通', to: '/' },
       ]"
     />
 
@@ -12,7 +12,7 @@
       title="我擅长的"
       :actions="[
         { label: '思考', to: '/' },
-        { label: '整理', to: '/' }
+        { label: '整理', to: '/' },
       ]"
     />
 
@@ -21,7 +21,7 @@
       :actions="[
         { label: '游戏', to: '/' },
         { label: '解密', to: '/' },
-        { label: '番剧', to: '/' }
+        { label: '番剧', to: '/' },
       ]"
     />
 
@@ -30,7 +30,7 @@
       :actions="[
         { label: '百科', to: '/' },
         { label: '日常', to: '/' },
-        { label: '脑洞', to: '/' }
+        { label: '脑洞', to: '/' },
       ]"
     />
 
@@ -42,7 +42,7 @@
         { label: '投资', to: '/' },
         { label: '硬件', to: '/' },
         { label: '乐器', to: '/' },
-        { label: '脑科学', to: '/' }
+        { label: '脑科学', to: '/' },
       ]"
     />
   </main>
@@ -50,7 +50,7 @@
 
 <script setup>
 // 当前组件暂无逻辑
-import ModuleCard from "@/components/ModuleCard.vue";
+import ModuleCard from '@/components/ModuleCard.vue'
 import { useHead } from '@unhead/vue'
 useHead({ title: '首页' })
 </script>
@@ -93,7 +93,9 @@ useHead({ title: '首页' })
 
 /* 响应式：中屏 2 列，小屏 1 列 */
 @media (max-width: 1200px) {
-  .hero-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 @media (max-width: 640px) {
   .hero-grid {

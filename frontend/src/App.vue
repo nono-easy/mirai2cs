@@ -4,14 +4,12 @@
     <header class="app-header">
       <div class="container nav">
         <router-link to="/" class="brand" aria-label="Mirai2CS Home">
-          <img src="/mirai2cs-logo.png" alt="" class="brand-logo"/>
+          <img src="/mirai2cs-logo.png" alt="" class="brand-logo" />
           <span class="brand-text">Mirai2CS</span>
         </router-link>
 
         <div class="nav-actions">
-          <el-button type="text" class="nav-btn" @click="$router.push('/')">
-            🏠 首页
-          </el-button>
+          <el-button type="text" class="nav-btn" @click="$router.push('/')">🏠 首页</el-button>
           <el-button
             type="primary"
             tag="a"
@@ -20,7 +18,7 @@
             rel="noopener noreferrer"
             class="gh-btn"
           >
-            <img src="../src/assets/github-mark-white.svg" class="icon" alt="GitHub"/>
+            <img src="../src/assets/github-mark-white.svg" class="icon" alt="GitHub" />
             GitHub
           </el-button>
         </div>
@@ -32,22 +30,20 @@
       <div class="container">
         <!-- 将首尾外边距塌陷风险内收：用 wrapper 兜底 -->
         <div class="page-wrap">
-          <router-view/>
+          <router-view />
         </div>
       </div>
     </main>
 
     <!-- 页脚（可选） -->
     <footer class="app-footer">
-      <div class="container footer-inner">
-        © {{ new Date().getFullYear() }} Mirai2CS · のの
-      </div>
+      <div class="container footer-inner">© {{ new Date().getFullYear() }} Mirai2CS · のの</div>
     </footer>
   </div>
 </template>
 
 <script setup lang="ts">
-import {onMounted, onBeforeUnmount} from 'vue'
+import { onMounted, onBeforeUnmount } from 'vue'
 import { useHead } from '@unhead/vue'
 
 useHead({
@@ -59,14 +55,14 @@ onMounted(() => {
   let oldTitle = document.title
   const observer = new MutationObserver(() => {
     if (document.title !== oldTitle) {
-      console.log('标题变化:', oldTitle, '→', document.title)
+      if (import.meta.env.DEV) console.warn('标题变化:', oldTitle, '→', document.title)
       oldTitle = document.title
     }
   })
   observer.observe(document.querySelector('title')!, {
     subtree: true,
     characterData: true,
-    childList: true
+    childList: true,
   })
 
   // 页面卸载时清理
@@ -142,7 +138,7 @@ onMounted(() => {
   inline-size: 32px;
   block-size: 32px;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .brand-text {

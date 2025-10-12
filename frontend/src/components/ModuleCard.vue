@@ -2,7 +2,7 @@
   <section class="module-card">
     <!-- 标题行（可选图标） -->
     <header class="card-head">
-      <slot name="icon"/>
+      <slot name="icon" />
       <h3 class="card-title">{{ title }}</h3>
     </header>
 
@@ -48,8 +48,8 @@
 <script setup lang="ts">
 interface Action {
   label: string
-  to?: string        // 内部路由
-  href?: string      // 外链
+  to?: string // 内部路由
+  href?: string // 外链
   type?: 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'default'
 }
 
@@ -64,13 +64,15 @@ defineProps<{
   background: #fff;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
-  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .module-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, .10);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
 }
 
 .card-head {
@@ -104,7 +106,8 @@ defineProps<{
   -webkit-tap-highlight-color: transparent;
 }
 
-.subbtn:focus, .subbtn:focus-visible {
+.subbtn:focus,
+.subbtn:focus-visible {
   outline: none;
   box-shadow: none;
 }

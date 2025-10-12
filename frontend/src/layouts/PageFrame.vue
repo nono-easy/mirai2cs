@@ -56,7 +56,7 @@ defineProps<{
   --page-title-weight: 800;
 
   /* 轻边框与圆角（与全站风格保持一致） */
-  --page-border: var(--app-border, rgba(0,0,0,.08));
+  --page-border: var(--app-border, rgba(0, 0, 0, 0.08));
   --page-radius: 14px;
 }
 
@@ -70,23 +70,35 @@ defineProps<{
 }
 
 /* 和 header/footer 同步的容器宽度；你的 .container 已全局存在即可复用 */
-.container { inline-size: 100%; }
+.container {
+  inline-size: 100%;
+}
 
 /* ---- 页头：三段式布局（面包屑 / 标题 / 右侧操作） ---- */
 .page-head {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-areas:
-    "breadcrumb actions"
-    "title     actions";
+    'breadcrumb actions'
+    'title     actions';
   align-items: center;
   row-gap: 10px;
   margin-block-end: var(--page-gap);
 }
 
-.page-breadcrumb { grid-area: breadcrumb; font-size: 13px; opacity: .8; }
-.page-title { grid-area: title; }
-.page-actions { grid-area: actions; display: inline-flex; gap: 10px; }
+.page-breadcrumb {
+  grid-area: breadcrumb;
+  font-size: 13px;
+  opacity: 0.8;
+}
+.page-title {
+  grid-area: title;
+}
+.page-actions {
+  grid-area: actions;
+  display: inline-flex;
+  gap: 10px;
+}
 
 .title {
   margin: 0;
@@ -106,7 +118,9 @@ defineProps<{
 }
 
 /* ---- 主体：统一垂直节奏；卡片是“无投影”干净风 ---- */
-.page-body > * + * { margin-block-start: var(--section-gap); }
+.page-body > * + * {
+  margin-block-start: var(--section-gap);
+}
 
 /* 你常用的模块化卡片（无阴影、弱边框、柔和圆角） */
 .section-card {

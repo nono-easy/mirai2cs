@@ -1,31 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    // ✅ 也可用 "node16" 或 "nodenext"
-    "types": [
-      "node",
-      "vite/client"
-    ],
-    // ✅ 让 TS 认识 Node 与 import.meta
-    "allowJs": true,
-    "jsx": "preserve",
     "strict": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    }
+    "paths": { "@/*": ["src/*"] },
+    "types": ["node", "vite/client"]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "src/**/*.md",
     "src/**/*.d.ts",
+    "src/**/*.md",
     "vite.config.ts",
     "env.d.ts"
   ]

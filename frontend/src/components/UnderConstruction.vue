@@ -1,10 +1,7 @@
-
 <script setup>
-
 defineProps({
   msg: String,
 })
-
 </script>
 
 <template>
@@ -16,8 +13,8 @@ defineProps({
 <style scoped>
 .center-box {
   display: grid;
-  place-items: center;  /* 居中就好 */
-  min-height: 100%;     /* 占满父容器(main)的可见高度 */
+  place-items: center; /* 居中就好 */
+  min-height: 100%; /* 占满父容器(main)的可见高度 */
 }
 
 h1 {

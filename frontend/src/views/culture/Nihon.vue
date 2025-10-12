@@ -58,7 +58,9 @@ const nav = (to) => router.push(to)
   --bg-soft: #faf6f1;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg-soft: #151515; }
+  :root {
+    --bg-soft: #151515;
+  }
 }
 
 .nihon-wrap {
@@ -73,19 +75,25 @@ const nav = (to) => router.push(to)
   grid-template-columns: 1fr;
 }
 @media (min-width: 680px) {
-  .nihon-grid { grid-template-columns: repeat(2, 1fr); }
+  .nihon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (min-width: 980px) {
-  .nihon-grid { grid-template-columns: repeat(3, 1fr); }
+  .nihon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .nihon-card {
   border-radius: var(--radius);
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .nihon-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
 }
 
 /* 让图标+文本在一行，垂直居中；卡片内容统一高度 */
@@ -100,33 +108,38 @@ const nav = (to) => router.push(to)
 
 /* 萌系圆形图标 */
 .icon {
-  width: 56px; height: 56px;
-  display: grid; place-items: center;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
   background: linear-gradient(180deg, #ffe7f1, #ffd9e8);
-  box-shadow: 0 2px 8px rgba(255, 80, 160, .15);
+  box-shadow: 0 2px 8px rgba(255, 80, 160, 0.15);
   font-size: 26px;
   user-select: none;
 }
 .icon.violet {
   background: linear-gradient(180deg, #efe5ff, #e4d6ff);
-  box-shadow: 0 2px 8px rgba(90, 65, 200, .15);
+  box-shadow: 0 2px 8px rgba(90, 65, 200, 0.15);
 }
 .icon.orange {
   background: linear-gradient(180deg, #fff0dc, #ffe4c2);
-  box-shadow: 0 2px 8px rgba(255, 140, 0, .15);
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.15);
 }
 
-.content { display: grid; gap: 6px; }
+.content {
+  display: grid;
+  gap: 6px;
+}
 .title {
   margin: 0;
   font-size: 18px;
   font-weight: 700;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
 }
 .desc {
   margin: 0;
-  opacity: .8;
+  opacity: 0.8;
   line-height: 1.6;
   min-height: 1.6em; /* 保证两行时也不跳高 */
 }
@@ -135,5 +148,4 @@ const nav = (to) => router.push(to)
   display: flex;
   gap: 8px;
 }
-
 </style>

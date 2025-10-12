@@ -2,7 +2,13 @@
   <div class="about-wrap">
     <el-card>
       <h2>关于本站 · Mirai2CS</h2>
-      <p>一个面向未来的计算机科学小站，融合 <strong>编程学习</strong> 与 <strong>二次元文化</strong>。</p>
+      <p>
+        一个面向未来的计算机科学小站，融合
+        <strong>编程学习</strong>
+        与
+        <strong>二次元文化</strong>
+        。
+      </p>
     </el-card>
 
     <el-card>
@@ -14,7 +20,10 @@
 
     <el-card>
       <h3>联系站长</h3>
-      <p>📧 Email：<strong>nono.mirai2cs@gmail.com</strong></p>
+      <p>
+        📧 Email：
+        <strong>nono.mirai2cs@gmail.com</strong>
+      </p>
     </el-card>
   </div>
 </template>

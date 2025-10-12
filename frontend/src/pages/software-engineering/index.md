@@ -3,11 +3,11 @@ layout: article
 title: 软件工程
 desc: 以工程化方法构建可靠的软件系统
 breadcrumb:
-  - { text: 首页, to: "/" }
+  - { text: 首页, to: '/' }
   - { text: 软件工程 }
 actions:
-  - { label: 快速上手, type: primary, to: "/software-engineering/guide" }
-  - { label: 学习路线, to: "/software-engineering/roadmap" }
+  - { label: 快速上手, type: primary, to: '/software-engineering/guide' }
+  - { label: 学习路线, to: '/software-engineering/roadmap' }
 updated: 2025-10-07
 ---
 
