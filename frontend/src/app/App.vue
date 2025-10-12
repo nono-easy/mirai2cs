@@ -18,7 +18,7 @@
             rel="noopener noreferrer"
             class="gh-btn"
           >
-            <img src="assets/images/github-mark-white.svg" class="icon" alt="GitHub" />
+            <img src="../assets/images/github-mark-white.svg" class="icon" alt="GitHub" />
             GitHub
           </el-button>
         </div>
