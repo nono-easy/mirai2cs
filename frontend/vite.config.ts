@@ -28,7 +28,7 @@ export default defineConfig({
     AutoImport({ resolvers: [ElementPlusResolver()], dts: 'src/auto-imports.d.ts' }),
     Components({
       resolvers: [ElementPlusResolver({ importStyle: 'css' })],
-      dts: 'src/components.d.ts',
+      dts: 'src/app/components.d.ts',
     }),
 
     enableAnalyzer &&

@@ -17,6 +17,6 @@
     "src/**/*.d.ts",
     "src/**/*.md",
     "vite.config.ts",
-    "env.d.ts"
+    "src/types/env.d.ts"
   ]
 }
