@@ -25,7 +25,7 @@ export default defineConfig({
     }),
     Layouts({ layoutsDirs: 'src/layouts', defaultLayout: 'article' }),
 
-    AutoImport({ resolvers: [ElementPlusResolver()], dts: 'src/auto-imports.d.ts' }),
+    AutoImport({ resolvers: [ElementPlusResolver()], dts: 'auto-imports.d.ts' }),
     Components({
       resolvers: [ElementPlusResolver({ importStyle: 'css' })],
       dts: 'src/app/components.d.ts',
