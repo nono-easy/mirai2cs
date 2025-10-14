@@ -45,6 +45,21 @@
         { label: '脑科学', to: '/sorry' },
       ]"
     />
+
+    <ModuleCard
+      title="杂货铺"
+      :actions="[
+        { label: '建站史', to: '/history' },
+        { label: '关于', to: '/about' },
+        { label: '计算机科学', to: '/cs' },
+        { label: '未来装置研究所', to: '/lab' },
+        { label: '脑科学', to: '/neuroscience' },
+        { label: '动漫', to: '/anime' },
+        { label: '日语', to: '/japanese' },
+        { label: '日本', to: '/nihon' },
+        { label: '游戏', to: '/game' },
+      ]"
+    />
   </main>
 </template>
 
