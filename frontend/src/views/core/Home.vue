@@ -4,45 +4,45 @@
       title="我能做的"
       :actions="[
         { label: '软件工程', to: '/software-engineering' },
-        { label: '沟通', to: '/' },
+        { label: '沟通', to: '/sorry' },
       ]"
     />
 
     <ModuleCard
       title="我擅长的"
       :actions="[
-        { label: '思考', to: '/' },
-        { label: '整理', to: '/' },
+        { label: '思考', to: '/sorry' },
+        { label: '整理', to: '/sorry' },
       ]"
     />
 
     <ModuleCard
       title="我喜欢的"
       :actions="[
-        { label: '游戏', to: '/' },
-        { label: '解密', to: '/' },
-        { label: '番剧', to: '/' },
+        { label: '游戏', to: '/sorry' },
+        { label: '解密', to: '/sorry' },
+        { label: '番剧', to: '/sorry' },
       ]"
     />
 
     <ModuleCard
       title="我思考的"
       :actions="[
-        { label: '百科', to: '/' },
-        { label: '日常', to: '/' },
-        { label: '脑洞', to: '/' },
+        { label: '百科', to: '/sorry' },
+        { label: '日常', to: '/sorry' },
+        { label: '脑洞', to: '/sorry' },
       ]"
     />
 
     <ModuleCard
       title="我想做的"
       :actions="[
-        { label: '语言', to: '/' },
-        { label: '工商', to: '/' },
-        { label: '投资', to: '/' },
-        { label: '硬件', to: '/' },
-        { label: '乐器', to: '/' },
-        { label: '脑科学', to: '/' },
+        { label: '语言', to: '/sorry' },
+        { label: '工商', to: '/sorry' },
+        { label: '投资', to: '/sorry' },
+        { label: '硬件', to: '/sorry' },
+        { label: '乐器', to: '/sorry' },
+        { label: '脑科学', to: '/sorry' },
       ]"
     />
   </main>
