@@ -12,7 +12,8 @@
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.ts,.js --max-warnings=0",
     "lint:fix": "eslint . --ext .vue,.ts,.js --fix",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "postbuild": "node scripts/after-build.cjs"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
