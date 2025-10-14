@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -C frontend dev",
+    "build": "pnpm -C frontend build && tsx scripts/generate-sitemap.ts",
+    "preview": "pnpm -C frontend preview",
+    "lint": "pnpm -C frontend lint",
+    "typecheck": "pnpm -C frontend typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "tsx": "^4.20.6"
+  }
+}
