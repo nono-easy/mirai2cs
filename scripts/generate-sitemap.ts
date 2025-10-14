@@ -52,10 +52,10 @@ function buildRobotsTxt() {
 }
 
 async function main() {
-  const publicDir = resolve("frontend/dist");
-  await mkdir(publicDir, { recursive: true });
-  await writeFile(resolve(publicDir, "sitemap.xml"), buildSitemapXml(), "utf8");
-  await writeFile(resolve(publicDir, "robots.txt"), buildRobotsTxt(), "utf8");
+  const distDir = resolve("frontend/dist");
+  await mkdir(distDir, { recursive: true });
+  await writeFile(resolve(distDir, "sitemap.xml"), buildSitemapXml(), "utf8");
+  await writeFile(resolve(distDir, "robots.txt"), buildRobotsTxt(), "utf8");
 
   console.log("✅ Generated frontend/dist/sitemap.xml & robots.txt");
 }
