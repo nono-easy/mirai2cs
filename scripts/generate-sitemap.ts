@@ -1,8 +1,7 @@
 // @ts-nocheck
 import { writeFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
-// noinspection ES6PreferShortImport
-import { publicRoutes } from "../frontend/src/router/routes.meta";
+import { publicRoutes } from "@/router/routes.meta";
 
 const SITE_URL = (process.env.SITE_URL || "https://mirai2cs.com").replace(/\/+$/, "");
 
@@ -11,8 +10,6 @@ function today() {
 }
 
 function buildSitemapXml() {
-  console.log("publicRoutes:", publicRoutes);
-
   const items = publicRoutes
     .filter(r => !(r as any).noindex)
     .map(r => {
