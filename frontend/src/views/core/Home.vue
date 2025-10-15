@@ -4,7 +4,7 @@
       title="我能做的"
       :actions="[
         { label: '软件工程', to: '/software-engineering' },
-        { label: '沟通', to: '/sorry' },
+        { label: '沟通', to: '/communication' },
       ]"
     />
 
