@@ -2,6 +2,7 @@
 export const publicRoutes = [
   { path: '/', changefreq: 'daily', priority: 1.0 },
   { path: '/software-engineering', changefreq: 'weekly', priority: 0.7 },
+  { path: '/communication', changefreq: 'monthly', priority: 0.6 },
   { path: '/computer-science', changefreq: 'weekly', priority: 0.7 },
   { path: '/anime', changefreq: 'weekly', priority: 0.7 },
   { path: '/japanese', changefreq: 'weekly', priority: 0.7 },

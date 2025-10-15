@@ -20,6 +20,12 @@ const routes: RouteRecordRaw[] = [
     meta: { title: '软件工程 - mirai2cs' },
   },
   {
+    path: '/communication',
+    name: 'Communication',
+    component: () => import('@/pages/communication/index.md'),
+    meta: { title: '沟通 - mirai2cs' },
+  },
+  {
     path: '/about',
     name: 'About',
     component: () => import('../views/core/About.vue'),
