@@ -21,7 +21,7 @@ updated: 2025-02-14
 | --- | --- | --- |
 | 发现 Bug、希望添加功能 | [GitHub Issues](https://github.com/nono-easy/mirai2cs/issues) | 1-3 个工作日内确认并标记处理计划 |
 | 快速提问、临时协作 | [Discord 社群](https://discord.gg/8AQq9wWBsD) | 当日内回复，适合实时讨论 |
-| 正式合作、媒体采访 | [电子邮件](mailto:nono.easy.dev@gmail.com) | 3 个工作日内给到明确反馈 |
+| 正式合作、媒体采访 | [电子邮件](mailto:nono.mirai2cs@gmail.com) | 3 个工作日内给到明确反馈 |
 
 > 如果你不确定该用哪个渠道，直接发 Issue 或邮件即可，我们会在内部转交给合适的同学。
 
