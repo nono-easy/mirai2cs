@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted /*, onActivated, onDeactivated*/ } from 'vue'
 
-// 建站日
-const launchDate = new Date('2025-08-24')
+// 建站日（建议写成完整 ISO，减少时区歧义）
+const launchDate = new Date('2025-08-24T00:00:00')
 
 // 日期格式化
 const formatDate = (d: Date): string =>
@@ -23,8 +23,9 @@ const formatDate = (d: Date): string =>
 const now = ref<Date>(new Date())
 
 // 站龄（天）
+const MS_PER_DAY = 1000 * 60 * 60 * 24
 const daysAlive = computed(() =>
-  Math.floor((now.value.getTime() - launchDate.getTime()) / (1000 * 60 * 60 * 24))
+  Math.floor((now.value.getTime() - launchDate.getTime()) / MS_PER_DAY)
 )
 
 // 日期字符串
@@ -47,11 +48,33 @@ const logs = ref<LogItem[]>([
   { date: '250824', text: '网站上线' },
 ])
 
-// 定时更新时间（顺便调试输出，确保变量被使用）
-setInterval(() => {
-  now.value = new Date()
-  if (import.meta.env.DEV) console.warn(`已运行 ${daysAlive.value} 天`)
-}, 60000)
+// ---- 定时器：正确的生命周期管理 ----
+
+// 用 ReturnType<typeof setInterval> 兼容浏览器/Node 类型
+let timerId: ReturnType<typeof setInterval> | null = null
+const TICK_MS = 60_000 // 每分钟刷新
+
+const startClock = () => {
+  if (timerId != null) return // 避免重复启动
+  timerId = setInterval(() => {
+    now.value = new Date()
+    if (import.meta.env.DEV) {
+      // 仅开发环境打印，避免污染生产控制台
+      console.warn(`已运行 ${daysAlive.value} 天`)
+    }
+  }, TICK_MS)
+}
+
+const stopClock = () => {
+  if (timerId != null) {
+    clearInterval(timerId)
+    timerId = null
+  }
+}
+
+// 组件挂载/卸载时启动与清理
+onMounted(startClock)
+onUnmounted(stopClock)
 </script>
 
 <style>
