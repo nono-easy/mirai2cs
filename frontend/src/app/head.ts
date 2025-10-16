@@ -44,14 +44,12 @@ export function createAppHead(): VueHeadClient {
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Mirai2CS' },
 
-      // ✅ 统一到 /public 下真实存在的路径（我们稍后手工放文件）
       { property: 'og:image', content: '/og/default-og.png' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:image', content: '/og/default-og.png' }, // 建议同步
     ],
 
     link: [
-      // ✅ 统一到 /public/icons 下
       { rel: 'icon', type: 'image/png', href: '/icons/favicon-32.png', sizes: '32x32' },
       { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon.png', sizes: '180x180' },
     ],
