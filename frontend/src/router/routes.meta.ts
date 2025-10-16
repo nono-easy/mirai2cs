@@ -7,6 +7,7 @@ export const publicRoutes = [
   { path: '/anime', changefreq: 'weekly', priority: 0.7 },
   { path: '/japanese', changefreq: 'weekly', priority: 0.7 },
   { path: '/neuroscience', changefreq: 'weekly', priority: 0.7 },
+  { path: '/snake', changefreq: 'weekly', priority: 0.6 },
   // 以后新增：{ path: "/blog" },
   // 不想收录：{ path: "/debug", noindex: true },
 ] as const
