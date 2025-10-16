@@ -62,6 +62,12 @@ const routes: RouteRecordRaw[] = [
     meta: { title: '游戏 - mirai2cs' },
   },
   {
+    path: '/snake',
+    name: 'SnakeGame',
+    component: () => import('../views/entertainment/SnakeGame.vue'),
+    meta: { title: '贪吃蛇 - mirai2cs' },
+  },
+  {
     path: '/test',
     name: 'Test',
     component: () => import('../views/entertainment/Test.vue'),

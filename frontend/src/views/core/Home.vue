@@ -61,7 +61,7 @@
       ]"
     />
 
-    <ModuleCard title="网页游戏制作 - TODO" :actions="[{ label: '贪吃蛇', to: '/sorry' }]" />
+    <ModuleCard title="网页游戏制作" :actions="[{ label: '贪吃蛇', to: '/snake' }]" />
   </main>
 </template>
 
