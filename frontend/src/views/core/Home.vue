@@ -57,9 +57,11 @@
         { label: '动漫', to: '/anime' },
         { label: '日语', to: '/japanese' },
         { label: '日本', to: '/nihon' },
-        { label: '游戏', to: '/game' },
+        { label: '游戏测评', to: '/game' },
       ]"
     />
+
+    <ModuleCard title="网页游戏制作 - TODO" :actions="[{ label: '贪吃蛇', to: '/sorry' }]" />
   </main>
 </template>
 
