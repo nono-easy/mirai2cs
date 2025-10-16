@@ -116,7 +116,7 @@ function initSnake() {
   const startY = Math.floor(GRID_SIZE / 2)
   const startX = Math.floor(GRID_SIZE / 2) - Math.floor(START_LENGTH / 2)
   snake.value = Array.from({ length: START_LENGTH }, (_, i) => ({
-    x: startX + i,
+    x: startX + START_LENGTH - 1 - i,
     y: startY,
   }))
   direction.value = { x: 1, y: 0 }
