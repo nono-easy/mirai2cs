@@ -16,7 +16,7 @@
       <p>
         “Mirai2CS” 的意思大概就是「面向未来的计算机科学」。
         <br />
-        “mirai” 来自日语「未来」，“2”谐音“to”，“cs” 指的是 “to computer science”。
+        “mirai” 来自日语「未来」，“2”谐音“to”，“cs” 指的是 “computer science”。
         <br />
         这是一个个人网站，用来记录我在计算机科学路上的一些想法和尝试。
       </p>
