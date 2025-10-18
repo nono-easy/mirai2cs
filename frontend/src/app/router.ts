@@ -26,6 +26,18 @@ const routes: RouteRecordRaw[] = [
     meta: { title: '沟通 - mirai2cs' },
   },
   {
+    path: '/encyclopedia',
+    name: 'EncyclopediaHome',
+    component: () => import('../views/encyclopedia/EncyclopediaHome.vue'),
+    meta: { title: '百科 - mirai2cs' },
+  },
+  {
+    path: '/encyclopedia/mirai2cs',
+    name: 'EncyclopediaMirai2cs',
+    component: () => import('../views/encyclopedia/Mirai2csEntry.vue'),
+    meta: { title: 'mirai2cs - 百科 - mirai2cs' },
+  },
+  {
     path: '/about',
     name: 'About',
     component: () => import('../views/core/About.vue'),
