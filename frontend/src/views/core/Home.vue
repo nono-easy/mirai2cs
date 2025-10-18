@@ -30,7 +30,7 @@
     <ModuleCard
       title="我思考的"
       :actions="[
-        { label: '百科', to: '/sorry' },
+        { label: '百科', to: '/encyclopedia' },
         { label: '日常', to: '/sorry' },
         { label: '脑洞', to: '/sorry' },
       ]"
