@@ -63,7 +63,7 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue'
 
-useHead({ title: 'mirai2cs - 百科 - mirai2cs' })
+useHead({ title: 'mirai2cs - 百科' })
 </script>
 
 <style scoped>

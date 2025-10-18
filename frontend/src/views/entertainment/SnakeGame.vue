@@ -65,7 +65,7 @@ import { useHead } from '@unhead/vue'
 
 type Position = { x: number; y: number }
 
-useHead({ title: '贪吃蛇 - mirai2cs' })
+useHead({ title: '贪吃蛇' })
 
 const GRID_SIZE = 18
 const START_LENGTH = 3

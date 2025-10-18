@@ -74,7 +74,8 @@ const filteredEntries = computed(() => {
   })
 })
 
-useHead({ title: '百科 - mirai2cs' })
+useHead({ title: '百科' })
+
 </script>
 
 <style scoped>
