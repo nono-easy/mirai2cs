@@ -3,8 +3,9 @@
     <header class="hero">
       <h1>のの百科</h1>
       <p class="intro">
-        这里记录我在搭建 mirai2cs
-        过程中积累下的知识与洞见。词条目前还不多，但我会持续更新，欢迎常来看看。
+        这里记录我在搭建 mirai2cs 过程中积累下的知识与洞见。
+        <br />
+        词条目前还不多，但我会持续更新，欢迎常来看看。
       </p>
 
       <form class="search-form" role="search" @submit.prevent>
