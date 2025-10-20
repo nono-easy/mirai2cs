@@ -68,10 +68,21 @@
 </template>
 
 <script setup>
-// 当前组件暂无逻辑
+import { onMounted, onBeforeUnmount } from 'vue'
 import ModuleCard from '@/components/ModuleCard.vue'
 import { useHead } from '@unhead/vue'
+
 useHead({ title: '首页' })
+
+const SCROLLBAR_HIDDEN_CLASS = 'is-home-scrollbar-hidden'
+
+onMounted(() => {
+  document.body.classList.add(SCROLLBAR_HIDDEN_CLASS)
+})
+
+onBeforeUnmount(() => {
+  document.body.classList.remove(SCROLLBAR_HIDDEN_CLASS)
+})
 </script>
 
 <style>
@@ -134,5 +145,14 @@ useHead({ title: '首页' })
     border-radius: 0;
     margin-top: 24px; /* 移动端适当减小顶部间距 */
   }
+}
+
+body.is-home-scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body.is-home-scrollbar-hidden::-webkit-scrollbar {
+  display: none;
 }
 </style>
