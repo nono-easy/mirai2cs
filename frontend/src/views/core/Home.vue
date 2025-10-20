@@ -68,10 +68,41 @@
 </template>
 
 <script setup>
-// 当前组件暂无逻辑
+import { onMounted, onBeforeUnmount, onActivated, onDeactivated } from 'vue'
 import ModuleCard from '@/components/ModuleCard.vue'
 import { useHead } from '@unhead/vue'
+
 useHead({ title: '首页' })
+
+const SCROLLBAR_HIDDEN_CLASS = 'is-home-scrollbar-hidden'
+
+const enableHiddenScrollbar = () => {
+  if (typeof document === 'undefined') return
+  document.body.classList.add(SCROLLBAR_HIDDEN_CLASS)
+  document.documentElement.classList.add(SCROLLBAR_HIDDEN_CLASS)
+}
+
+const disableHiddenScrollbar = () => {
+  if (typeof document === 'undefined') return
+  document.body.classList.remove(SCROLLBAR_HIDDEN_CLASS)
+  document.documentElement.classList.remove(SCROLLBAR_HIDDEN_CLASS)
+}
+
+onMounted(() => {
+  enableHiddenScrollbar()
+})
+
+onBeforeUnmount(() => {
+  disableHiddenScrollbar()
+})
+
+onActivated(() => {
+  enableHiddenScrollbar()
+})
+
+onDeactivated(() => {
+  disableHiddenScrollbar()
+})
 </script>
 
 <style>
@@ -134,5 +165,16 @@ useHead({ title: '首页' })
     border-radius: 0;
     margin-top: 24px; /* 移动端适当减小顶部间距 */
   }
+}
+
+html.is-home-scrollbar-hidden,
+body.is-home-scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html.is-home-scrollbar-hidden::-webkit-scrollbar,
+body.is-home-scrollbar-hidden::-webkit-scrollbar {
+  display: none;
 }
 </style>
