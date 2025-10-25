@@ -26,6 +26,12 @@ const routes: RouteRecordRaw[] = [
     meta: { title: '沟通' },
   },
   {
+    path: '/q-a',
+    name: 'QuestionAnswer',
+    component: () => import('@/pages/question-answer/index.md'),
+    meta: { title: '问题 & 答案' },
+  },
+  {
     path: '/encyclopedia',
     name: 'EncyclopediaHome',
     component: () => import('../views/encyclopedia/EncyclopediaHome.vue'),
