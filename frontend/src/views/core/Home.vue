@@ -7,6 +7,7 @@
       :actions="[
         { label: '软件工程', to: '/software-engineering' },
         { label: '沟通', to: '/communication' },
+        { label: '问题 & 答案', to: '/q-a' },
       ]"
     />
 
