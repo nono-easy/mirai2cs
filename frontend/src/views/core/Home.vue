@@ -1,6 +1,4 @@
 <template>
-  <h1>のの的个人站点</h1>
-  <h2>关键词：计算机、二次元、思考</h2>
   <main class="hero-grid">
     <ModuleCard
       title="我能做的"
