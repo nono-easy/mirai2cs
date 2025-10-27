@@ -121,6 +121,12 @@ const routes: RouteRecordRaw[] = [
     component: () => import('../views/culture/Nihon.vue'),
     meta: { title: '日本' },
   },
+  {
+    path: '/password-generator',
+    name: 'password-generator',
+    component: () => import('@/views/tools/PasswordGenerator.vue'),
+    meta: { title: '密码生成器' },
+  },
 
   // 兜底 404 —— 必须在最后
   {

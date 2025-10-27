@@ -65,6 +65,7 @@
     />
 
     <ModuleCard title="网页游戏制作" :actions="[{ label: '贪吃蛇', to: '/snake' }]" />
+    <ModuleCard title="实用工具" :actions="[{ label: '密码生成器', to: '/password-generator' }]" />
   </main>
 </template>
 
@@ -148,6 +149,7 @@ onDeactivated(() => {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 @media (max-width: 640px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -166,16 +168,5 @@ onDeactivated(() => {
     border-radius: 0;
     margin-top: 24px; /* 移动端适当减小顶部间距 */
   }
-}
-
-html.is-home-scrollbar-hidden,
-body.is-home-scrollbar-hidden {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-html.is-home-scrollbar-hidden::-webkit-scrollbar,
-body.is-home-scrollbar-hidden::-webkit-scrollbar {
-  display: none;
 }
 </style>
