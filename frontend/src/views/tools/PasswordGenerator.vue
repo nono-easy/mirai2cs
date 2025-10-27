@@ -1,3 +1,4 @@
+<!--suppress CssUnusedSymbol -->
 <template>
   <div class="generator-container">
     <!-- 密码显示区域 -->
@@ -122,6 +123,7 @@ const copyToClipboard = async () => {
 }
 </script>
 
+<!-- stylelint-disable -->
 <style scoped>
 * {
   margin: 0;
@@ -314,6 +316,32 @@ const copyToClipboard = async () => {
   overflow: hidden;
 }
 
+.strength-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.strength-fill.strength-1 {
+  width: 25%;
+  background: #ef4444;
+}
+
+.strength-fill.strength-2 {
+  width: 50%;
+  background: #f97316;
+}
+
+.strength-fill.strength-3 {
+  width: 75%;
+  background: #eab308;
+}
+
+.strength-fill.strength-4 {
+  width: 100%;
+  background: #10b981;
+}
+
 .strength-text {
   font-size: 12px;
   color: #666;
@@ -364,3 +392,4 @@ const copyToClipboard = async () => {
   }
 }
 </style>
+<!-- stylelint-enable -->
