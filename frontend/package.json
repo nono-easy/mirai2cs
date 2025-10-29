@@ -13,7 +13,7 @@
     "lint": "eslint . --ext .vue,.ts,.js --max-warnings=0",
     "lint:fix": "eslint . --ext .vue,.ts,.js --fix",
     "format": "prettier . --write",
-    "postbuild": "node scripts/after-build.ts"
+    "postbuild": "tsx scripts/after-build.ts"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
