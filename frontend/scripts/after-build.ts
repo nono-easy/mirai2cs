@@ -25,7 +25,7 @@ function copyRobots(options: CopyRobotsOptions) {
 }
 
 const dist = path.join(__dirname, '..', 'dist');
-const isPreview = process.env.CF_PAGES_BRANCH && process.env.CF_PAGES_BRANCH !== 'main';
+const isPreview: boolean = !!(process.env.CF_PAGES_BRANCH && process.env.CF_PAGES_BRANCH !== 'main');  // ✅ 添加类型注解
 const publicDir = path.join(__dirname, '..', 'public');
 
 copyRobots({ isPreview, dist, publicDir });
