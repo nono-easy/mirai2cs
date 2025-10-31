@@ -1,6 +1,6 @@
 import { writeFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
-import { publicRoutes } from "frontend/src/router/routes.meta";
+import { publicRoutes } from "@/router/routes.meta";
 
 const SITE_URL = (process.env.SITE_URL || "https://mirai2cs.com").replace(/\/+$/, "");
 
