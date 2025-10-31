@@ -1,6 +1,6 @@
 <template>
   <main class="hero-grid">
-    <ModuleCard title="我能做的" :actions="[]" />
+    <ModuleCard title="我能做的" :actions="[]"/>
 
     <ModuleCard
       title="我擅长的"
@@ -42,11 +42,14 @@
       ]"
     />
 
+    <ModuleCard title="实用工具" :actions="[{ label: '密码生成器', to: '/password-generator' }]"/>
+
     <ModuleCard
       title="杂货铺"
       :actions="[
         { label: '软件工程', to: '/software-engineering' },
         { label: '沟通', to: '/communication' },
+        { label: '贪吃蛇', to: '/snake' },
         { label: '建站史', to: '/history' },
         { label: '关于', to: '/about' },
         // { label: '计算机科学', to: '/cs' },
@@ -57,18 +60,15 @@
         // { label: '游戏测评', to: '/game' },
       ]"
     />
-
-    <ModuleCard title="网页游戏制作" :actions="[{ label: '贪吃蛇', to: '/snake' }]" />
-    <ModuleCard title="实用工具" :actions="[{ label: '密码生成器', to: '/password-generator' }]" />
   </main>
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, onActivated, onDeactivated } from 'vue'
+import {onMounted, onBeforeUnmount, onActivated, onDeactivated} from 'vue'
 import ModuleCard from '@/components/ModuleCard.vue'
-import { useHead } from '@unhead/vue'
+import {useHead} from '@unhead/vue'
 
-useHead({ title: '首页' })
+useHead({title: '首页'})
 
 const SCROLLBAR_HIDDEN_CLASS = 'is-home-scrollbar-hidden'
 
