@@ -29,6 +29,7 @@ dist/
 .vite/
 *.local
 package-lock.json
+pnpm-lock.yaml
 
 # IDEA
 .idea
