@@ -2,6 +2,10 @@ packages:
   - frontend
   - backend
   - scripts
+
 ignoredBuiltDependencies:
   - esbuild
   - vue-demi
+
+onlyBuiltDependencies:
+  - electron
