@@ -26,6 +26,12 @@ const routes: RouteRecordRaw[] = [
     meta: { title: '沟通' },
   },
   {
+    path: '/first-principles',
+    name: 'FirstPrinciples',
+    component: () => import('@/pages/first-principles/index.md'),
+    meta: { title: '第一性原理' },
+  },
+  {
     path: '/q-a',
     name: 'QuestionAnswer',
     component: () => import('@/pages/question-answer/index.md'),

@@ -49,6 +49,7 @@
       :actions="[
         { label: '软件工程', to: '/software-engineering' },
         { label: '沟通', to: '/communication' },
+        { label: '第一性原理', to: '/first-principles' },
         { label: '贪吃蛇', to: '/snake' },
         { label: '建站史', to: '/history' },
         { label: '关于', to: '/about' },

@@ -3,6 +3,7 @@ export const publicRoutes = [
   { path: '/', changefreq: 'daily', priority: 1.0 },
   { path: '/software-engineering', changefreq: 'weekly', priority: 0.7 },
   { path: '/communication', changefreq: 'monthly', priority: 0.6 },
+  { path: '/first-principles', changefreq: 'weekly', priority: 0.6 },  // 新增
   { path: '/encyclopedia', changefreq: 'weekly', priority: 0.6 },
   { path: '/encyclopedia/mirai2cs', changefreq: 'monthly', priority: 0.5 },
   { path: '/computer-science', changefreq: 'weekly', priority: 0.7 },
